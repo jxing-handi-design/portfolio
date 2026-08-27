@@ -432,6 +432,7 @@ blockquote.pull{
   margin-bottom: 48px;
 }
 .spec-sheet div{
+  min-width: 0;
   padding: 16px 20px 16px 0;
   font-family: var(--font-mono);
 }
@@ -444,7 +445,12 @@ blockquote.pull{
   letter-spacing: 0.06em;
   margin-bottom: 6px;
 }
-.spec-sheet .v{ font-size: 13.5px; color: var(--ink); line-height:1.5; }
+.spec-sheet .v{ font-size: 13.5px; color: var(--ink); line-height:1.5; overflow-wrap: break-word; }
+@media (max-width: 720px){
+  .spec-sheet{ grid-template-columns: 1fr; }
+  .spec-sheet div{ padding: 16px 0; }
+  .spec-sheet div + div{ padding-left: 0; border-left: none; border-top: 1px solid var(--line); }
+}
 
 .case-body{ padding-bottom: 60px; }
 .case-body h2{
