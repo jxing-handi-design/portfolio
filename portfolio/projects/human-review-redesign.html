@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Human Review Experience Redesign — Jianqi Xing</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand">JIANQI <b>XING</b></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown">
+        <a href="../index.html#work" class="active">Projects</a>
+                <ul class="dropdown-menu">
+          <li><a href="process-value-cost-reporting.html"><span class="dd-tag">Product Design</span>Process Value &amp; Cost Reporting</a></li>
+          <li><a href="ai-hub-workflow.html"><span class="dd-tag">System Architecture</span>AI Hub Cross-Class Workflow Architecture</a></li>
+          <li><a href="data-flow-study.html"><span class="dd-tag">Research</span>Unstructured Data Flow User Study</a></li>
+          <li><a href="human-review-redesign.html"><span class="dd-tag">Product Redesign</span>Human Review Experience Redesign</a></li>
+        </ul>
+      </li>
+      <li><a href="https://drive.google.com/file/d/1C8jIoR6oChvoVp97HDRyJRCprHPN4pNb/view?usp=drive_link" class="ext" target="_blank" rel="noopener">Résumé</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <p class="eyebrow">Product Redesign</p>
+    <h1>Human Review Experience Redesign</h1>
+    <p class="lede">How one on-site visit turned a table-UI ticket into a full workflow redesign — and set the review standard across two platform generations.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="spec-sheet">
+    <div><span class="k">Company</span><span class="v">Instabase</span></div>
+    <div><span class="k">Role</span><span class="v">Lead Product Designer<br>(sole designer)</span></div>
+    <div><span class="k">Timeline</span><span class="v">2022 – 2024<br>4-month MVP, 2 years of iteration</span></div>
+    <div><span class="k">Worked with</span><span class="v">1 PM · Engineering Team · Field Engineers</span></div>
+    <div><span class="k">Status</span><span class="v">Shipped to enterprise customers</span></div>
+  </div>
+</div>
+
+<main class="case-body">
+  <div class="wrap">
+
+    <h2>Overview</h2>
+    <p>Instabase builds workflow automation software that processes large volumes of unstructured documents for enterprise customers. Human review is the quality gate in that pipeline — reviewers correct extraction errors from the model, annotate documents, and build the ground-truth datasets that directly improve model performance.</p>
+    <p>I was asked to update the table editing experience. After an on-site contextual inquiry at a major enterprise client, the work became a redesign of the entire review workflow — a direction later adopted as the standard when Instabase launched its next-generation platform, AI Hub.</p>
+
+    <div class="subsection">
+      <p class="kicker">The Challenge</p>
+      <h3>Human review is the backbone of AI quality — but the tooling hadn't kept pace</h3>
+      <p>The tool hadn't kept up with how enterprise teams had scaled their operations. Reviewers needed to edit table cells, work within governance and permission constraints, and select text across documents — none of which the existing interface supported well.</p>
+      <p>But the table UI I was asked to fix was a symptom, not the cause. The ask assumed a single-screen, single-tool problem — the actual workflow was neither.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">The Discovery</p>
+      <h3>I asked to go on-site before touching Figma</h3>
+      <p>Rather than starting from the ticket as written, I observed reviewers at a major enterprise client in their actual working environment. Seeing the real workspace — not the workflow as described in a spec — surfaced problems no ticket or support log had captured.</p>
+
+      <div class="insight-grid">
+        <div><span class="k">Two monitors, one window</span>Reviewers had adopted dual monitors on their own; the tool was built for a single window and left the extra screen unused.</div>
+        <div><span class="k">Two tools, one team</span>Annotation and review ran in separate interfaces for what was functionally the same work.</div>
+        <div><span class="k">Managers flying blind</span>Team leads had no visibility into queue status, workload, or review progress inside the tool.</div>
+      </div>
+
+      <p class="kicker" style="margin-top:8px;">Reframing the problem</p>
+      <h3>From "update a UI component" to "redesign a workflow"</h3>
+      <table class="tradeoff-table">
+        <tr><th>Original scope</th><th>Expanded scope</th></tr>
+        <tr><td>Update table annotation UI</td><td>Redesign the full review experience</td></tr>
+        <tr><td>—</td><td>Add dual-monitor support</td></tr>
+        <tr><td>—</td><td>Unify annotation + review into one UI</td></tr>
+        <tr><td>—</td><td>Build a manager view</td></tr>
+      </table>
+      <p>I brought these back to the PM as observations rather than opinions. The dual-monitor workaround and the manager visibility gap were concrete enough that the case for expanding scope made itself.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">The Design</p>
+      <h3>Design decision 1 — one interface for annotation and review</h3>
+      <p>Annotation and review had been two tools because of how the system was built internally, not because the work was different. I unified them into a single interface so reviewers no longer switched tools mid-task — and so the two engineering teams behind them shared one system for building rules and surfacing them to reviewers.</p>
+      <p>The direction held: it was later adopted as the standard when Instabase launched AI Hub with a single unified review interface.</p>
+
+      <figure>
+        <svg viewBox="0 0 720 248" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before: Annotation tool and Human review tool as two separate interfaces. After: one Unified review interface." width="100%" height="auto" style="display:block;max-width:100%">
+          <text x="150" y="16" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#8A8F95" text-anchor="middle" letter-spacing="0.07em">BEFORE</text>
+          <rect x="20" y="26" width="260" height="64" rx="6" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="150" y="63" font-family="'Space Grotesk',sans-serif" font-size="13.5" font-weight="500" fill="#5B6169" text-anchor="middle">Annotation tool</text>
+          <rect x="20" y="106" width="260" height="64" rx="6" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="150" y="143" font-family="'Space Grotesk',sans-serif" font-size="13.5" font-weight="500" fill="#5B6169" text-anchor="middle">Human review tool</text>
+          <text x="150" y="196" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95" text-anchor="middle">Same work, two interfaces —</text>
+          <text x="150" y="212" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95" text-anchor="middle">split by how the system was built</text>
+          <line x1="286" y1="98" x2="408" y2="98" stroke="#BFC1BA" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="404,92 414,98 404,104" fill="none" stroke="#BFC1BA" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="564" y="16" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#2B3A67" text-anchor="middle" letter-spacing="0.07em">AFTER</text>
+          <rect x="428" y="26" width="272" height="144" rx="6" fill="#EEF0F5" stroke="#2B3A67" stroke-width="1.5"/>
+          <text x="564" y="101" font-family="'Space Grotesk',sans-serif" font-size="13.5" font-weight="500" fill="#2B3A67" text-anchor="middle">Unified review interface</text>
+          <text x="564" y="196" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95" text-anchor="middle">One system for building rules</text>
+          <text x="564" y="212" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95" text-anchor="middle">and surfacing them to reviewers</text>
+        </svg>
+        <figcaption>Annotation and review were separate tools because of how the system was built internally, not because the work was different. Unifying them also merged two engineering teams onto one shared system.</figcaption>
+      </figure>
+
+      <h3 style="margin-top:40px;">Design decision 2 — designing for the actual workspace, not an assumed one</h3>
+      <p>Reviewers worked across two monitors; the UI was built for one window. The redesign let panels pop out as separate tabs and drag to a second monitor, so the document preview stayed visible at all times while reviewers worked in the field view.</p>
+      <p>Full multi-panel pop-out carried real engineering cost, so I scoped it with engineering and prioritized the document preview first — the panel reviewers used most. Reviewers benefited from day one instead of waiting on a fully general solution.</p>
+      <figure>
+        <img src="../assets/img/human/dual-monitor.png" alt="Two-window review interface showing a field review panel on one monitor and a document preview on a second monitor">
+        <figcaption>Dual-monitor flow: the document preview pops out to a second window, matching how reviewers had already adapted their physical workspace.</figcaption>
+      </figure>
+
+      <h3 style="margin-top:40px;">Design decision 3 — making the invisible visible</h3>
+      <p>Coordination happened entirely outside the tool: team leads couldn't assign priority or track review work, and had no shared view of queue status or workload. The redesign introduced three capabilities they'd been working around informally — queue assignment, workload visibility, and escalation for high-priority or problematic documents.</p>
+      <p>This shifted review management from a reactive, ad hoc process into something that could be planned, monitored, and optimized.</p>
+      <figure>
+        <img src="../assets/img/human/manager-view.png" alt="Manager view showing the legacy Flow Review platform on the left and AI Hub on the right, both displaying queue and workload management interfaces">
+        <figcaption>Manager view, legacy platform (left) and AI Hub (right) — the same queue-and-workload model carried across two platform generations.</figcaption>
+      </figure>
+
+      <h3 style="margin-top:40px;">Design decision 4 — reducing cognitive load with familiar patterns</h3>
+      <p>The original tool had no table editing at all — reviewers could see table data but couldn't correct individual cells, which made errors on tabular documents nearly impossible to resolve. The redesign adopted a spreadsheet-style interaction model familiar from Excel and Google Sheets. For a non-technical user base handling high document volumes, lower interface learning cost translates directly into faster onboarding and fewer errors.</p>
+      <figure>
+        <img src="../assets/img/human/table-editing.png" alt="Table editing view showing a document preview next to an editable spreadsheet-style transaction table">
+        <figcaption>Table editing — a spreadsheet model reviewers already knew, replacing a table they could read but not correct. Sample document shown.</figcaption>
+      </figure>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">The Impact</p>
+      <h3>A foundation that scaled beyond the MVP</h3>
+      <p>Reviewers described the unified interface as a significant improvement — it let them focus on the quality of their review rather than on fighting the tool. The stronger validation came later, when the unified direction was adopted as the platform standard for AI Hub.</p>
+      <p>What I don't have is numbers. We shipped without instrumenting adoption or throughput, so impact is hard to state precisely after the fact. Completion time and average review rate were the metrics that mattered here — both have a direct line to reviewer productivity.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">Longer-term</p>
+      <h3>Two years later: human review is more complex than we thought</h3>
+      <p>What began as a single review step evolved into a layered system spanning extraction correction, expert review, and business-decision checkpoints — the same "human-in-the-loop is universal" pattern that later showed up independently in my <a href="data-flow-study.html">unstructured data flow research</a>.</p>
+      <p>Looking back, the thing I'd push harder on isn't process — it's positioning. I treated human review as an accuracy stopgap when it was already becoming a strategic differentiator.</p>
+    </div>
+
+  </div>
+</main>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="data-flow-study.html">← Previous: Data Flow User Study</a>
+    <a href="process-value-cost-reporting.html">Next: Process Value &amp; Cost Reporting →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Jianqi Xing · Selected work shared for portfolio review.</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jianqixing/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/lightbox.js"></script>
+</body>
+</html>

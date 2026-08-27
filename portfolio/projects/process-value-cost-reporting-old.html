@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Process Value &amp; Cost Reporting — Jianqi Xing</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+  try {
+    if (sessionStorage.getItem("jx_portfolio_unlocked") === "1") {
+      document.documentElement.classList.add("jx-unlocked");
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<div class="pw-gate">
+  <div class="pw-gate-box">
+    <a href="../index.html" class="brand">JIANQI <b>XING</b></a>
+    <h1>This case study is password-protected</h1>
+    <p>Enter the password to view this project.</p>
+    <form id="pw-gate-form" autocomplete="off">
+      <input type="password" id="pw-gate-input" placeholder="Password" required>
+      <button type="submit">View case study</button>
+      <p class="pw-gate-error" id="pw-gate-error"></p>
+    </form>
+  </div>
+</div>
+
+<div class="protected-content">
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand">JIANQI <b>XING</b></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="nav-dropdown">
+        <a href="../index.html#work" class="active">Projects</a>
+        <ul class="dropdown-menu">
+          <li><a href="process-value-cost-reporting.html"><span class="dd-tag">Product Design</span>Process Value &amp; Cost Reporting</a></li>
+          <li><a href="data-flow-study.html"><span class="dd-tag">Research</span>Unstructured Data Flow User Study</a></li>
+          <li><a href="ai-hub-workflow.html"><span class="dd-tag">System Architecture</span>AI Hub Cross-Class Workflow Architecture</a></li>
+          <li><a href="human-review-redesign.html"><span class="dd-tag">Product Redesign</span>Human Review Experience Redesign</a></li>
+        </ul>
+      </li>
+      <li><a href="https://drive.google.com/file/d/1C8jIoR6oChvoVp97HDRyJRCprHPN4pNb/view?usp=drive_link" class="ext" target="_blank" rel="noopener">Résumé</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <p class="eyebrow">Product Design</p>
+    <h1>Process Value &amp; Cost Reporting</h1>
+    <p class="lede">Camunda customers could watch a single process run, but had no centralized place to see all of them at once — or to judge any of them against the goals the business had set. Building that view came down to one question: which numbers can a customer actually stand behind?</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="spec-sheet">
+    <div><span class="k">Company</span><span class="v">Camunda</span></div>
+    <div><span class="k">Role</span><span class="v">Product Designer</span></div>
+    <div><span class="k">Timeline</span><span class="v">06/2026 – present</span></div>
+    <div><span class="k">Worked with</span><span class="v">Strategy team · Hub engineering · Value engineers</span></div>
+    <div><span class="k">Status</span><span class="v">Phase 1 in development</span></div>
+  </div>
+</div>
+
+<main class="case-body">
+  <div class="wrap">
+
+    <h2>Overview</h2>
+    <p>Camunda orchestrates business processes across an organization. Monitoring existed at the level of a single process, but nowhere could someone see the whole portfolio together and ask whether it was performing. The people who need that view are the ones accountable for the outcome — business owners, and the technical leads who run the processes for them.</p>
+    <p>The strategy team decided to build it and set the direction: lead with the cost savings AI brings — which is why it's still called the business value dashboard internally. I owned the validation: taking the proposed metrics to value engineers and customers, testing whether customers could realistically supply what those metrics required, and using the answer to define what phase 1 would be.</p>
+    <p><em>A note on detail: this work is in development. Screens are cropped prototype views built to test the design — not shipped UI — and use sample data. Findings are generalized; specific customers, figures, and internals are omitted.</em></p>
+
+    <div class="subsection">
+      <p class="kicker">Validation</p>
+      <h3>Testing the proposed metrics against what customers could actually supply</h3>
+      <p>The direction I inherited carried eleven metrics, most of them anchored to estimated hours saved and estimated cost saved. Value engineers and customers responded well to the concept in feedback sessions. Two problems surfaced anyway, and neither was a UI problem.</p>
+      <p><strong>There was no shared cost model.</strong> We had designed for one rate inside an organization. Customers don't work that way: human cost splits by role, by team, by geography, and that split is exactly where the number gets contested internally. What we'd scoped as a settings field was a modelling problem, and the implementation cost climbed with it.</p>
+
+      <figure>
+        <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left: the design assumed one hourly rate per organization. Right: customers described rates varying by role, team and location." width="100%" height="auto" style="display:block;max-width:100%">
+          <text x="175" y="22" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#8A8F95" text-anchor="middle" letter-spacing="0.07em">WHAT WE DESIGNED FOR</text>
+          <rect x="20" y="38" width="310" height="200" rx="6" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <rect x="95" y="70" width="160" height="36" rx="5" fill="#FFFFFF" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="175" y="93" font-family="'Space Grotesk',sans-serif" font-size="12" fill="#5B6169" text-anchor="middle">Organization</text>
+          <line x1="175" y1="106" x2="175" y2="146" stroke="#BFC1BA" stroke-width="1.5"/>
+          <polyline points="169,140 175,148 181,140" fill="none" stroke="#BFC1BA" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <rect x="115" y="152" width="120" height="38" rx="5" fill="#FFFFFF" stroke="#BFC1BA" stroke-width="1.5"/>
+          <text x="175" y="176" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#5B6169" text-anchor="middle">$X per hour</text>
+          <text x="175" y="216" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95" text-anchor="middle">One rate, applied to every task</text>
+
+          <line x1="344" y1="138" x2="366" y2="138" stroke="#BFC1BA" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="362,132 372,138 362,144" fill="none" stroke="#BFC1BA" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+          <text x="545" y="22" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#2B3A67" text-anchor="middle" letter-spacing="0.07em">WHAT CUSTOMERS DESCRIBED</text>
+          <rect x="390" y="38" width="310" height="200" rx="6" fill="#EEF0F5" stroke="#2B3A67" stroke-width="1.5"/>
+          <rect x="465" y="70" width="160" height="36" rx="5" fill="#FFFFFF" stroke="#2B3A67" stroke-width="1.5"/>
+          <text x="545" y="93" font-family="'Space Grotesk',sans-serif" font-size="12" fill="#2B3A67" text-anchor="middle">Organization</text>
+          <line x1="545" y1="106" x2="545" y2="122" stroke="#9AA5C0" stroke-width="1.5"/>
+          <line x1="450" y1="122" x2="640" y2="122" stroke="#9AA5C0" stroke-width="1.5"/>
+          <line x1="450" y1="122" x2="450" y2="140" stroke="#9AA5C0" stroke-width="1.5"/>
+          <line x1="545" y1="122" x2="545" y2="140" stroke="#9AA5C0" stroke-width="1.5"/>
+          <line x1="640" y1="122" x2="640" y2="140" stroke="#9AA5C0" stroke-width="1.5"/>
+          <rect x="410" y="140" width="80" height="30" rx="5" fill="#FFFFFF" stroke="#9AA5C0" stroke-width="1.5"/>
+          <text x="450" y="160" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#2B3A67" text-anchor="middle">Role</text>
+          <rect x="505" y="140" width="80" height="30" rx="5" fill="#FFFFFF" stroke="#9AA5C0" stroke-width="1.5"/>
+          <text x="545" y="160" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#2B3A67" text-anchor="middle">Team</text>
+          <rect x="600" y="140" width="80" height="30" rx="5" fill="#FFFFFF" stroke="#9AA5C0" stroke-width="1.5"/>
+          <text x="640" y="160" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#2B3A67" text-anchor="middle">Location</text>
+          <text x="450" y="192" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67" text-anchor="middle">$?</text>
+          <text x="545" y="192" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67" text-anchor="middle">$?</text>
+          <text x="640" y="192" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67" text-anchor="middle">$?</text>
+          <text x="545" y="216" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95" text-anchor="middle">Different rates, contested internally</text>
+
+          <text x="20" y="268" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">The design depended on a single number. Nobody we spoke to could produce one their</text>
+          <text x="20" y="286" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">own organization would agree on.</text>
+        </svg>
+        <figcaption>The assumption on the left, what customers described on the right. Cost wasn't a field to fill in — it was a model each organization would have to build and defend.</figcaption>
+      </figure>
+
+      <p><strong>And without a target, the numbers meant nothing.</strong> Users raised this unprompted and repeatedly: a figure with nothing to measure it against tells them nothing about whether the process is doing well. But cost targets imply a system for setting, owning, and versioning them — and the release window couldn't hold that.</p>
+      <p>Both findings were scope problems, not design problems. Rather than absorbing them and shipping something quietly compromised, I brought them to the strategy team with the tradeoff already framed.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">The Decision</p>
+      <h3>Rescoping around what the system already knows</h3>
+
+      <table class="tradeoff-table">
+        <tr><th>Option</th><th>Approach</th><th>Tradeoff</th></tr>
+        <tr>
+          <td>Keep cost first</td>
+          <td>Hold the savings metrics; build a cost model and a target system to support them</td>
+          <td>Speaks the language the business cares about, but rests on inputs customers can't produce reliably — and doesn't fit the release</td>
+        </tr>
+        <tr>
+          <td>Process first <em>(chosen)</em></td>
+          <td>Volume, automation rate, cycle time, agentic adoption — derived from execution data, with cost layered in later</td>
+          <td>One step further from the dollar figure, but every number is defensible, and what we do ask customers to enter is something they can answer</td>
+        </tr>
+      </table>
+
+      <p>We took the process-first set. The point wasn't only to ask customers for less; it was to make sure the effort we do ask for produces a number they trust rather than an estimate they'd have to defend internally. A confident cost figure built on a rate nobody in the organization agreed to is worse than a trend that can be verified — and value engineers put this artifact in front of customers, so it has to survive being questioned.</p>
+
+      <figure>
+        <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eleven explored metrics on the left, four metrics in phase one on the right" width="100%" height="auto" style="display:block;max-width:100%">
+          <text x="175" y="22" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#8A8F95" text-anchor="middle" letter-spacing="0.07em">EXPLORED — 11 METRICS</text>
+          <rect x="20" y="38" width="310" height="272" rx="6" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+
+          <circle cx="44" cy="66" r="3.5" fill="#2B3A67"/><text x="58" y="70" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169">Completed instances (vs. target)</text>
+          <circle cx="44" cy="90" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="94" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Estimated hours saved</text>
+          <circle cx="44" cy="114" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="118" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Estimated cost saved</text>
+          <circle cx="44" cy="138" r="3.5" fill="#2B3A67"/><text x="58" y="142" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169">Automation rate</text>
+          <circle cx="44" cy="162" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="166" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Infrastructure cost &amp; saving</text>
+          <circle cx="44" cy="186" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="190" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Avg. instance cost trend</text>
+          <circle cx="44" cy="210" r="3.5" fill="#2B3A67"/><text x="58" y="214" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169">Cycle time trend (vs. target)</text>
+          <circle cx="44" cy="234" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="238" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Incident rate</text>
+          <circle cx="44" cy="258" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="262" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Avg. human tasks per instance</text>
+          <circle cx="44" cy="282" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="286" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Avg. time to claim a task</text>
+          <circle cx="44" cy="300" r="3.5" fill="none" stroke="#BFC1BA" stroke-width="1.5"/><text x="58" y="304" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#A9ADA6">Avg. claim → complete</text>
+
+          <line x1="344" y1="174" x2="386" y2="174" stroke="#BFC1BA" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="382,168 392,174 382,180" fill="none" stroke="#BFC1BA" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+          <text x="553" y="22" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#2B3A67" text-anchor="middle" letter-spacing="0.07em">PHASE 1 — 4 METRICS</text>
+          <rect x="406" y="38" width="294" height="272" rx="6" fill="#EEF0F5" stroke="#2B3A67" stroke-width="1.5"/>
+          <text x="430" y="96" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67">Volume — completed instances</text>
+          <text x="430" y="152" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67">Automation rate</text>
+          <text x="430" y="208" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67">Cycle time</text>
+          <text x="430" y="258" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67">Agentic adoption</text>
+          <text x="430" y="276" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">token cost layered in phase 2</text>
+
+          <text x="20" y="344" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">Six of the eleven depended on a cost model or a target no customer we spoke to could</text>
+          <text x="20" y="362" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">produce reliably. Everything in phase 1 is derived from data the platform already</text>
+          <text x="20" y="380" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">collects — optional input sharpens it, but nothing breaks without it.</text>
+        </svg>
+        <figcaption>What got cut, and why. The filter wasn't importance — it was whether a customer could supply the number behind it.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/img/pvcr/overview.png" alt="Reporting header with environment and process filters, above a completed-instances total and a ranking of the highest-volume processes">
+        <figcaption>The four metrics in context, scoped by environment and process. Cropped prototype view, sample data.</figcaption>
+      </figure>
+
+      <h3 style="margin-top:40px;">Design decision 1 — degrade, don't block</h3>
+      <p>Customers were right that a bare number means nothing, but requiring a target would gate the whole report behind a setup step most users skip. So the report reads two ways at once: every metric compares against the same period previously by default, and a target upgrades it to read against the goal instead. Where targets are missing entirely, the section that would summarize them becomes a prompt that names what's absent — you can see the processes are running, not whether they're on track — rather than an empty card.</p>
+      <figure>
+        <img src="../assets/img/pvcr/target-states.png" alt="The same section in two states: one summarizing how many processes are meeting their targets, and one prompting the user to set a target">
+        <figcaption>Targets set on the left, none set on the right. Users who never open settings still get a report that says something. Cropped prototype views, sample data.</figcaption>
+      </figure>
+      <p>The same logic carries to the end of the report: once targets exist, the processes missing them are ranked and surfaced directly, so the page answers <em>what needs attention</em> rather than leaving the reader to work it out from the charts above.</p>
+      <p>Agentic cost follows the same rule in phase 2. Customers enter model token cost by hand; if they haven't, the report shows total token usage by model instead. Manual entry is a real cost to the user, which is why it isn't in phase 1 — but token pricing changes slowly enough that maintaining it by hand is a fair trade against an integration we don't have.</p>
+
+      <h3 style="margin-top:40px;">Design decision 2 — a definition of automation that survives regulation</h3>
+      <p>We started with straight-through rate: the share of instances completing with no human touch. Our CPO raised the case that broke it — many regulated processes mandate a human review step by law, so they score zero forever no matter how much of the work is automated. I moved the formula to automated tasks over total tasks, human and automated combined. That measures the work rather than the instance, so a mandatory review step costs a process a few points instead of everything.</p>
+      <figure>
+        <svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A process with four automated tasks and one mandatory human review, scored zero percent by straight-through rate and eighty percent by task-level automation rate." width="100%" height="auto" style="display:block;max-width:100%">
+          <text x="20" y="22" font-family="'Space Grotesk',sans-serif" font-size="10.5" fill="#8A8F95" letter-spacing="0.07em">ONE REGULATED PROCESS</text>
+          <rect x="20" y="38" width="118" height="42" rx="5" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="79" y="64" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169" text-anchor="middle">Automated</text>
+          <rect x="152" y="38" width="118" height="42" rx="5" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="211" y="64" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169" text-anchor="middle">Automated</text>
+          <rect x="284" y="38" width="152" height="42" rx="5" fill="#EEF0F5" stroke="#2B3A67" stroke-width="1.5"/>
+          <text x="360" y="57" font-family="'Space Grotesk',sans-serif" font-size="11.5" font-weight="500" fill="#2B3A67" text-anchor="middle">Human review</text>
+          <text x="360" y="72" font-family="'Space Grotesk',sans-serif" font-size="10" fill="#5B6169" text-anchor="middle">required by regulation</text>
+          <rect x="450" y="38" width="118" height="42" rx="5" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="509" y="64" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169" text-anchor="middle">Automated</text>
+          <rect x="582" y="38" width="118" height="42" rx="5" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="641" y="64" font-family="'Space Grotesk',sans-serif" font-size="11.5" fill="#5B6169" text-anchor="middle">Automated</text>
+          <line x1="140" y1="59" x2="150" y2="59" stroke="#BFC1BA" stroke-width="1.5"/>
+          <line x1="272" y1="59" x2="282" y2="59" stroke="#BFC1BA" stroke-width="1.5"/>
+          <line x1="438" y1="59" x2="448" y2="59" stroke="#BFC1BA" stroke-width="1.5"/>
+          <line x1="570" y1="59" x2="580" y2="59" stroke="#BFC1BA" stroke-width="1.5"/>
+
+          <rect x="20" y="120" width="680" height="64" rx="6" fill="#F5F6F3" stroke="#D8D9D3" stroke-width="1.5"/>
+          <text x="44" y="147" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#5B6169">Straight-through rate</text>
+          <text x="44" y="166" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#8A8F95">Instances completing untouched — one mandated step disqualifies every run</text>
+          <text x="676" y="162" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="500" fill="#A9ADA6" text-anchor="end">0%</text>
+
+          <rect x="20" y="196" width="680" height="64" rx="6" fill="#EEF0F5" stroke="#2B3A67" stroke-width="1.5"/>
+          <text x="44" y="223" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500" fill="#2B3A67">Task-level automation rate</text>
+          <text x="44" y="242" font-family="'Space Grotesk',sans-serif" font-size="11" fill="#5B6169">Automated tasks over all tasks — the mandated step costs one step, not the whole process</text>
+          <text x="676" y="238" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="500" fill="#2B3A67" text-anchor="end">80%</text>
+        </svg>
+        <figcaption>The same process, scored two ways. Straight-through rate reports zero automation on a process that is almost entirely automated.</figcaption>
+      </figure>
+      <p>Because the definition is contestable, it's printed on the card itself rather than buried in documentation — anyone who questions the number can see how it was derived. That matters for an artifact whose whole job is to be trusted in a customer conversation.</p>
+      <p>It introduces its own flaw, and I'd rather name it: a customer can inflate the number by adding trivial automated tasks. My proposal for phase 2 is to show both — the task-level rate for a fair reading of automation, straight-through rate for how often a process runs end to end untouched. Neither is honest alone.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">Impact</p>
+      <h3>A version that fits the release</h3>
+      <div class="insight-grid">
+        <div><span class="k">Scope</span>Narrowed eleven metrics to four, moving the release from blocked on an unbuilt cost model to in development</div>
+        <div><span class="k">Definition</span>Reframed automation rate so regulated processes aren't scored at zero</div>
+        <div><span class="k">Delivery</span>Contributed front-end code to the production codebase with Claude Code, shortening the loop between design and implementation</div>
+      </div>
+      <p>Phase 1 is still in development, so there's no usage data yet. The signals we plan to watch at launch are whether customers set targets at all, and whether value engineers reach for this in customer conversations — the two behaviors that would tell us the reporting is being used to make a case, not just to look at.</p>
+    </div>
+
+    <div class="subsection">
+      <p class="kicker">What's next</p>
+      <h3>Closing the distance to value</h3>
+      <p>Value engineers were direct in the second round of feedback: what we'd scoped reads closer to operational reporting than to the value story they'd been promised. That's fair, and it's the gap phase 2 exists to close — reintroducing cost, this time on a model customers can actually populate, alongside the fuller automation picture. We took phase 1 as the foundation that has to be trustworthy before anything can be priced on top of it.</p>
+      <p>The thing I'd sequence differently next time is smaller and closer to home: I validated a complete metric set before validating whether its inputs could be sourced. Testing the inputs first would have found the same answer in a fraction of the time.</p>
+    </div>
+
+  </div>
+</main>
+
+<div class="wrap">
+  <div class="case-nav">
+    <a href="human-review-redesign.html">← Previous: Human Review Redesign</a>
+    <a href="../index.html#work">Back to work →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Jianqi Xing · Case studies contain confidential work shared for evaluation purposes only.</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jianqixing/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/protect.js"></script>
+<script src="../assets/js/lightbox.js"></script>
+</body>
+</html>
